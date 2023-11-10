@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
       <body
-        className={`${poppins.variable} font-poppins flex min-h-screen flex-col items-center justify-between dark:bg-neutral-900`}
+        className={`${poppins.variable} font-poppins flex min-h-screen flex-col items-center justify-between bg-base-100 text-base-white overflow-x-hidden`}
       >
         {children}
       </body>
