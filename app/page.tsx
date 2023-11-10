@@ -8,7 +8,7 @@ const cardContent = [
   {
     title: "Doubloons",
     description:
-      "Doubloons (DBL) are the base currency and utility token of the ecosystem.",
+      "Doubloons (DBL) are the base currency and utility token of the ecosystem, they can be earned by liquidity mining rewards and through all types of in-game activities.",
   },
   {
     title: "Asteroids",
@@ -29,6 +29,33 @@ const cardContent = [
     title: "Decorations",
     description:
       "Decorations (e.g., furniture, plants, and more) can be placed in metaverse or spaceship units. They can be used to decorate your home in your preferred style.\n\nDecorations can be part of a limited collection or special rewards from events.",
+  },
+];
+
+const questContent = [
+  {
+    title: "Off-game quests",
+    description: "Off-chain contests and social tasks.",
+  },
+
+  {
+    title: "Event quests",
+    description: "Quests that can be completed in the life span of an event.",
+  },
+  {
+    title: "Repeatable quests",
+    description:
+      "Repeatable in-game bounties such as weekly mission, monthly mission, etc.",
+  },
+  {
+    title: "Achievements",
+    description:
+      "Players can earn unique in-game achievements, each a one-time accomplishment showcasing individual prowess and skill.",
+  },
+  {
+    title: "Server Wide Achievements",
+    description:
+      "These quests are obtainable only by one player or a group of players on the server such as Worlds Firsts and Tournaments.",
   },
 ];
 
@@ -54,13 +81,31 @@ export default function Home() {
         token implementation can be easily attached and removed from the storage
         contract like if they were modules.
       </SectionTitle>
-      {cardContent.map((item) => (
-        <Cards
-          title={item.title}
-          description={item.description}
-          key={item.title}
-        />
-      ))}
+      <div className="mt-8 mb-16 flex gap-8 items-stretch flex-wrap container justify-center">
+        {cardContent.map((item) => (
+          <Cards
+            title={item.title}
+            description={item.description}
+            key={item.title}
+          />
+        ))}
+      </div>
+      <SectionTitle pretitle="Quests" title="Quests System">
+        Quests are challenges that users can complete to obtain rewards.
+        <br />
+        <br />
+        We have adapted the Ethereum EIP712 standard to bring on-chain verified
+        data about the completion of a quest and its rewards.
+      </SectionTitle>
+      <div className="mt-8 mb-16 flex gap-8 items-stretch flex-wrap container justify-center">
+        {questContent.map((item) => (
+          <Cards
+            title={item.title}
+            description={item.description}
+            key={item.title}
+          />
+        ))}
+      </div>
       <Footer />
     </>
   );

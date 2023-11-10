@@ -3,8 +3,8 @@ import React from "react";
 type cardsPropsType = { title: string; description: string };
 const Cards = (props: cardsPropsType) => {
   return (
-    <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
-      <div className="">{props.title}</div>
+    <div className="flex flex-col gap-4 px-8 rounded-2xl py-8 bg-neutral w-96">
+      <div className="text-2xl font-semibold">{props.title}</div>
       <div className="">{props.description}</div>
     </div>
   );
