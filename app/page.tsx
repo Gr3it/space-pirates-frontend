@@ -59,6 +59,25 @@ const questContent = [
   },
 ];
 
+const governanceContent = [
+  {
+    title: "Restricted Access",
+    description:
+      "Access to governance can be unlocked by completing a special mission that requires the user to have been playing for some time. This way we ensure that only actual players can vote.",
+  },
+
+  {
+    title: "Weight system",
+    description:
+      "We created a novel vote-weighted system that increases the power of small voters and decreases the voting influence of whales.",
+  },
+  {
+    title: "Obtain vote power",
+    description:
+      "To obtain vote power user has to lock the Ve-Asteroids for a fixed amount of time. The longer the lock period, the more the voting power.",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -106,6 +125,32 @@ export default function Home() {
           />
         ))}
       </div>
+      <SectionTitle pretitle="Governance" title="Player Centered Ecosystem">
+        We designed the ecosystem to be player-centered. It is controlled by
+        active players and users of the ecosystem, instead of speculators or
+        VCs.
+      </SectionTitle>
+      <div className="mt-8 mb-16 flex gap-8 items-stretch flex-wrap container justify-center">
+        {governanceContent.map((item) => (
+          <Cards
+            title={item.title}
+            description={item.description}
+            key={item.title}
+          />
+        ))}
+      </div>
+      <SectionTitle pretitle="Game" title="Game Mechanics">
+        The game is an MMORPG where players create battle teams to compete in
+        PvP and PvE activities (e.g., 3v3 fights).
+        <br />
+        <br />
+        Players should create their team considering NFTs and gadgets synergies.
+        <br />
+        <br />
+        Players can take a break from the game and dedicate their time to
+        adorning their galleons and lands using the decorations obtained in the
+        mentioned activities.
+      </SectionTitle>
       <Footer />
     </>
   );
