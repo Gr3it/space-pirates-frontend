@@ -1,7 +1,14 @@
 import Link from "next/link";
 import NavbarLinks from "./navbarLinks";
+import { useConnect, useAccount } from "wagmi";
+import { InjectedConnector } from "wagmi/connectors/injected";
 
 const Navbar = () => {
+  const { address, isConnected } = useAccount();
+  const { connect } = useConnect({
+    connector: new InjectedConnector(),
+  });
+
   return (
     <div className="navbar container z-50 py-4 px-0">
       <div className="navbar-start">
@@ -41,9 +48,11 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-end gap-6 ">
-        <Link href="/webapp/trade/swap" className="btn btn-accent flex">
-          Connect Wallet
-        </Link>
+        <button onClick={() => connect()} className="btn btn-accent flex">
+          {isConnected
+            ? address?.substring(0, 6) + "..." + address?.substring(38)
+            : "Connect Wallet"}
+        </button>
         <Link href="/" className="btn btn-ghost text-accent bg-neutral flex">
           Launch Game
         </Link>
@@ -53,34 +62,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-{
-  /*
-
-<div className="w-full">
-      <nav className="container relative flex flex-wrap  p-8 mx-auto justify-between xl:px-0">
-        <div className="flex flex-wrap items-center justify-between w-auto">
-          <Link href="/">
-            <span className="flex items-center space-x-2 text-2xl font-medium">
-              <span>Space Pirates</span>
-            </span>
-          </Link>
-        </div>
-        <NavbarLinks />
-        <div className="mr-3 space-x-4 flex align-middle justify-center">
-          <div className="px-6 py-2 text-base-black bg-accent hover:bg-accent-hover rounded-md md:ml-5 cursor-pointer select-none">
-            Connect Wallet
-          </div>
-          <Link
-            href="/"
-            className="relative px-6 py-2 text-accent focus:outline outline-2 bg-neutral hover:text-accent-hover rounded-md md:ml-5 outline-accent"
-          >
-            Launch Game
-          </Link>
-        </div>
-      </nav>
-    </div>
-
-
-*/
-}

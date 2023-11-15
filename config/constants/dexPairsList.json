@@ -1,0 +1,13 @@
+{
+  "name": "SpacePirates Dex tokens list",
+  "timestamp": "2022-08-12T11:45:09Z",
+  "tokens": [
+    {
+      "name": "DBL/ASTR",
+      "symbol": "DBL/ASTR",
+      "address": "0x28d2f4111d58a734bD3F681040BeEc6D198Ef7B4",
+      "decimals": 18,
+      "logoURI": "/favicon.ico"
+    }
+  ]
+}

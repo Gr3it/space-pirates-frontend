@@ -24,10 +24,10 @@ const NavbarLinks = () => {
           <summary className="justify-between">Earn</summary>
           <ul className="p-2 bg-base-200 z-50 drop-shadow-md">
             <li>
-              <Link href="/pools">Pools</Link>
+              <Link href="/webapp/earn/pools">Pools</Link>
             </li>
             <li>
-              <Link href="/staking">Staking</Link>
+              <Link href="/webapp/earn/staking">Staking</Link>
             </li>
           </ul>
         </details>
@@ -37,32 +37,32 @@ const NavbarLinks = () => {
           <summary className="justify-between">NFTs</summary>
           <ul className="p-2 bg-base-200 z-50 drop-shadow-md">
             <li>
-              <Link href="/shop">Shop</Link>
+              <Link href="/webapp/nft/shop">Shop</Link>
             </li>
             <li>
-              <Link href="/mint">Mint</Link>
+              <Link href="/webapp/nft/mint">Mint</Link>
             </li>
           </ul>
         </details>
       </li>
       <li>
-        <Link href="/quest">Quest</Link>
+        <Link href="/webapp/quest">Quest</Link>
       </li>
       <li tabIndex={4}>
         <details>
           <summary className="justify-between">Faucet</summary>
           <ul className="p-2 bg-base-200 z-50 drop-shadow-md">
             <li>
-              <Link href="/faucet">Space faucet</Link>
+              <Link href="/webapp/faucet/token">Space faucet</Link>
             </li>
             <li>
-              <Link href="/faucet/trx">Sepolia faucet</Link>
+              <a href="/webapp/faucet/coin">Sepolia faucet</a>
             </li>
           </ul>
         </details>
       </li>
       <li>
-        <Link href="/wallet">Wallet</Link>
+        <Link href="/webapp/wallet">Wallet</Link>
       </li>
     </>
   );
