@@ -4,28 +4,43 @@ import React from "react";
 import Container from "./container";
 
 export default function Footer() {
-  const navigation = [
+  const developers = [
     {
-      name: "Documentation",
-      link: "https://emanuele-zini.gitbook.io/space-pirates/",
+      name: "GitHub",
+      link: "https://github.com/Gr3it/space-pirates-contracts",
     },
-    { name: "Inflation Dashboard", link: "./" },
     {
       name: "Protocol schema",
       link: "https://user-images.githubusercontent.com/79539455/168427909-10ffca5b-da41-4d8b-92e4-230e1f8afa02.png",
     },
     {
+      name: "Contracts Documentation",
+      link: "https://emanuele-zini.gitbook.io/space-pirates/developers/smart-contract",
+    },
+
+    {
+      name: "Bug Bounty",
+      link: "https://emanuele-zini.gitbook.io/space-pirates/developers/bug-bounties",
+    },
+  ];
+  const help = [
+    {
+      name: "Documentation",
+      link: "https://emanuele-zini.gitbook.io/space-pirates/",
+    },
+    { name: "Inflation Dashboard", link: "./" },
+
+    {
       name: "Pitch deck",
       link: "https://pitch.com/public/fa4ab34e-7b4a-49e8-aba5-bda6161fec46",
     },
+    { name: "Contact", link: "./" },
   ];
-  const legal = ["Terms", "Privacy", "Legal"];
   return (
     <div className="relative w-full container">
       <div className="grid grid-cols-1 gap-10 pt-10 mx-auto mt-5 border-t border-base-white lg:grid-cols-5">
         <div className="lg:col-span-2">
           <div>
-            {" "}
             <Link
               href="/"
               className="flex items-center space-x-2 text-2xl font-medium"
@@ -46,7 +61,8 @@ export default function Footer() {
 
         <div>
           <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
-            {navigation.map((item, index) => (
+            <header className="footer-title px-4 ">DEVELOPERS</header>
+            {developers.map((item, index) => (
               <a
                 target="_blank"
                 rel="noopener"
@@ -61,19 +77,22 @@ export default function Footer() {
         </div>
         <div>
           <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
-            {legal.map((item, index) => (
-              <Link
+            <header className="footer-title px-4 ">HELP</header>
+            {help.map((item, index) => (
+              <a
+                target="_blank"
+                rel="noopener"
                 key={index}
-                href="/"
+                href={item.link}
                 className="w-full px-4 py-2 rounded-md hover:text-primary focus:text-primary focus:outline-none focus:bg-neutral"
               >
-                {item}
-              </Link>
+                {item.name}
+              </a>
             ))}
           </div>
         </div>
         <div className="">
-          <div>Follow us</div>
+          <header className="footer-title">SOCIAL</header>
           <div className="flex mt-5 space-x-5 text-gray-500">
             <a href="./" target="_blank" rel="noopener">
               <span className="sr-only">Twitter</span>

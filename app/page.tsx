@@ -1,7 +1,6 @@
 import Image from "next/image";
-import Footer from "./components/footer";
 import Navbar from "./components/navbar";
-import SectionTitle from "./components/sectionTitile";
+import SectionTitle from "./components/sectionTitle";
 import Cards from "./components/cards";
 
 const cardContent = [
@@ -83,7 +82,7 @@ export default function Home() {
     <>
       <Navbar />
       <Image
-        className="absolute mt-[-5rem] mr-[-16rem]"
+        className="absolute mt-[-5rem] mr-[-16rem] z-0"
         src={"/banner.png"}
         width={2560}
         height={1440}
@@ -151,7 +150,6 @@ export default function Home() {
         adorning their galleons and lands using the decorations obtained in the
         mentioned activities.
       </SectionTitle>
-      <Footer />
     </>
   );
 }
