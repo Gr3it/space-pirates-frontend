@@ -2,27 +2,24 @@
   "name": "SpacePirates tokens list",
   "timestamp": "2022-07-12T11:45:09Z",
   "ids": [1000, 1001, 1002],
-  "tokens": [
-    {
-      "id": 1000,
+  "tokens": {
+    "1000":{
       "name": "Starter Gem",
-      "symbol": "",
+      "symbol": "Starter Gem",
       "decimals": 0,
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/19891.png"
     },
-    {
-      "id": 1001,
+    "1001":{
       "name": "Evocation Gem",
-      "symbol": "",
+      "symbol": "Evocation Gem",
       "decimals": 0,
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/19891.png"
     },
-    {
-      "id": 1002,
+    "1002":{
       "name": "Breeding Gem",
-      "symbol": "",
+      "symbol": "Breeding Gem",
       "decimals": 0,
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/19891.png"
     }
-  ]
+  }
 }

@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} font-poppins flex min-h-screen flex-col items-center justify-between bg-base-100 overflow-x-hidden w-[100vw]`}
+        className={`${poppins.variable} font-poppins flex min-h-screen flex-col items-center bg-base-100 overflow-x-hidden w-[100vw]`}
       >
         {children}
         <Footer />

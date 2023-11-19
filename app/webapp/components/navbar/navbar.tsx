@@ -1,14 +1,8 @@
 import Link from "next/link";
 import NavbarLinks from "./navbarLinks";
-import { useConnect, useAccount } from "wagmi";
-import { InjectedConnector } from "wagmi/connectors/injected";
+import ConnectWalletButton from "../wallet/connectWalletButton";
 
 const Navbar = () => {
-  const { address, isConnected } = useAccount();
-  const { connect } = useConnect({
-    connector: new InjectedConnector(),
-  });
-
   return (
     <div className="navbar container z-50 py-4 px-0">
       <div className="navbar-start">
@@ -48,11 +42,7 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-end gap-6 ">
-        <button onClick={() => connect()} className="btn btn-accent flex">
-          {isConnected
-            ? address?.substring(0, 6) + "..." + address?.substring(38)
-            : "Connect Wallet"}
-        </button>
+        <ConnectWalletButton />
         <Link href="/" className="btn btn-ghost text-accent bg-neutral flex">
           Launch Game
         </Link>

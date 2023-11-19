@@ -37,7 +37,7 @@ export default function Footer() {
     { name: "Contact", link: "./" },
   ];
   return (
-    <div className="relative w-full container">
+    <div className="relative w-full container mt-auto">
       <div className="grid grid-cols-1 gap-10 pt-10 mx-auto mt-5 border-t border-base-white lg:grid-cols-5">
         <div className="lg:col-span-2">
           <div>

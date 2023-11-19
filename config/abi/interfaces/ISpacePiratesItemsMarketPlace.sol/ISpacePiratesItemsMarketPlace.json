@@ -1,0 +1,363 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ISpacePiratesItemsMarketPlace",
+  "sourceName": "contracts/interfaces/ISpacePiratesItemsMarketPlace.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256[]",
+          "name": "itemsIds",
+          "type": "uint256[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256[]",
+          "name": "itemsQuantities",
+          "type": "uint256[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint128",
+          "name": "paymentId",
+          "type": "uint128"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint128",
+          "name": "price",
+          "type": "uint128"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint120",
+          "name": "saleEnd",
+          "type": "uint120"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint120",
+          "name": "available",
+          "type": "uint120"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint16",
+          "name": "maxBuyPerAddress",
+          "type": "uint16"
+        }
+      ],
+      "name": "AddItems",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256[]",
+          "name": "itemsIds",
+          "type": "uint256[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint128",
+          "name": "paymentId",
+          "type": "uint128"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint128",
+          "name": "price",
+          "type": "uint128"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint64",
+          "name": "quantity",
+          "type": "uint64"
+        }
+      ],
+      "name": "BuyItem",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "itemId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "saleIndex",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint64",
+          "name": "quantity",
+          "type": "uint64"
+        }
+      ],
+      "name": "buyItem",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "itemId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint128",
+          "name": "paymentId",
+          "type": "uint128"
+        },
+        {
+          "internalType": "uint128",
+          "name": "price",
+          "type": "uint128"
+        },
+        {
+          "internalType": "uint64",
+          "name": "itemQuantity",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint64",
+          "name": "saleEnd",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint64",
+          "name": "available",
+          "type": "uint64"
+        }
+      ],
+      "name": "createSale",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "itemsOnSale",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "itemsOnSaleArray",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "ids",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "saleIndexes",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "saleIndex",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "saleIndex",
+          "type": "uint256"
+        }
+      ],
+      "name": "saleItemsIds",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "ids",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "saleIndex",
+          "type": "uint256"
+        }
+      ],
+      "name": "saleItemsQuantities",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "quantities",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "saleIndex",
+          "type": "uint256"
+        }
+      ],
+      "name": "sales",
+      "outputs": [
+        {
+          "internalType": "uint128",
+          "name": "paymentId",
+          "type": "uint128"
+        },
+        {
+          "internalType": "uint128",
+          "name": "price",
+          "type": "uint128"
+        },
+        {
+          "internalType": "uint120",
+          "name": "saleEnd",
+          "type": "uint120"
+        },
+        {
+          "internalType": "uint120",
+          "name": "available",
+          "type": "uint120"
+        },
+        {
+          "internalType": "uint16",
+          "name": "maxBuyPerAddress",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "salesAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "name": "salesIndexesFromId",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "saleIndexes",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "tokenContract",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "tokenContract",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

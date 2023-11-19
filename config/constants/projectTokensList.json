@@ -1,20 +1,19 @@
 {
   "name": "SpacePirates Dex tokens list",
   "timestamp": "2022-07-12T11:45:09Z",
-  "tokens": [
-    {
-      "id": 1,
+  "ids":[1,2],
+  "tokens": {
+    "1":{
       "name": "Doubloons",
       "symbol": "DBL",
       "decimals": 18,
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
     },
-    {
-      "id": 2,
+    "2":{
       "name": "Asteroids",
       "symbol": "ASTR",
       "decimals": 18,
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png"
     }
-  ]
+  }
 }

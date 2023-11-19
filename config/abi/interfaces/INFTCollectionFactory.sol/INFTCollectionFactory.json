@@ -1,0 +1,439 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "INFTCollectionFactory",
+  "sourceName": "contracts/interfaces/INFTCollectionFactory.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint112",
+          "name": "available",
+          "type": "uint112"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint64",
+          "name": "start",
+          "type": "uint64"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint64",
+          "name": "end",
+          "type": "uint64"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint16",
+          "name": "maxMintPerAddress",
+          "type": "uint16"
+        }
+      ],
+      "name": "CreateCollection",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint112",
+          "name": "available",
+          "type": "uint112"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint64",
+          "name": "start",
+          "type": "uint64"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint64",
+          "name": "end",
+          "type": "uint64"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint16",
+          "name": "maxMintPerAddress",
+          "type": "uint16"
+        }
+      ],
+      "name": "EditCollection",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint128",
+          "name": "newDoubloonsPrice",
+          "type": "uint128"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint128",
+          "name": "newAsteroidsPrice",
+          "type": "uint128"
+        }
+      ],
+      "name": "SetPrice",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "ASTEROIDS",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "DOUBLOONS",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "EVOCATION_GEM",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "asteroidsPrice",
+      "outputs": [
+        {
+          "internalType": "uint128",
+          "name": "price",
+          "type": "uint128"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "availableCollections",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        }
+      ],
+      "name": "collections",
+      "outputs": [
+        {
+          "internalType": "uint112",
+          "name": "available",
+          "type": "uint112"
+        },
+        {
+          "internalType": "uint64",
+          "name": "start",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint64",
+          "name": "end",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint16",
+          "name": "maxMintPerAddress",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "uint112",
+          "name": "available",
+          "type": "uint112"
+        },
+        {
+          "internalType": "uint64",
+          "name": "start",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint64",
+          "name": "end",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint16",
+          "name": "maxMintPerAddress",
+          "type": "uint16"
+        }
+      ],
+      "name": "createCollection",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "doubloonsPrice",
+      "outputs": [
+        {
+          "internalType": "uint128",
+          "name": "price",
+          "type": "uint128"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "uint112",
+          "name": "available",
+          "type": "uint112"
+        },
+        {
+          "internalType": "uint64",
+          "name": "start",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint64",
+          "name": "end",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint16",
+          "name": "maxMintPerAddress",
+          "type": "uint16"
+        }
+      ],
+      "name": "editCollection",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "name": "exist",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getCollectionsList",
+      "outputs": [
+        {
+          "internalType": "string[]",
+          "name": "",
+          "type": "string[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "quantity",
+          "type": "uint256"
+        }
+      ],
+      "name": "mintCollectionItem",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "nbrOfCollectionMinted",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "nftContract",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint128",
+          "name": "newDoubloonsPrice",
+          "type": "uint128"
+        },
+        {
+          "internalType": "uint128",
+          "name": "newAsteroidsPrice",
+          "type": "uint128"
+        }
+      ],
+      "name": "setPrice",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "tokenContract",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
