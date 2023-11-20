@@ -3,19 +3,22 @@
   "timestamp": "2022-07-12T11:45:09Z",
   "ids": [1000, 1001, 1002],
   "tokens": {
-    "1000":{
+    "1000": {
+      "id": 1000,
       "name": "Starter Gem",
       "symbol": "Starter Gem",
       "decimals": 0,
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/19891.png"
     },
-    "1001":{
+    "1001": {
+      "id": 1001,
       "name": "Evocation Gem",
       "symbol": "Evocation Gem",
       "decimals": 0,
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/19891.png"
     },
-    "1002":{
+    "1002": {
+      "id": 1002,
       "name": "Breeding Gem",
       "symbol": "Breeding Gem",
       "decimals": 0,

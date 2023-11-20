@@ -1,23 +1,28 @@
 {
   "name": "SpacePirates Wrapped tokens list",
   "timestamp": "2022-07-12T11:45:09Z",
-  "ids": [100,101,102],
+  "ids": [100, 101, 102],
   "tokens": {
     "100": {
+      "id": 100,
       "name": "Space Ethereum",
       "symbol": "SP-ETH",
       "decimals": 18,
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/2396.png"
     },
     "101": {
+      "id": 101,
       "name": "Space USDT",
       "symbol": "SP-USDT",
+      "unwrappedAddress": "0x47822AF2870184A843e459DD84245Bb199F07189",
       "decimals": 18,
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/825.png"
     },
     "102": {
+      "id": 102,
       "name": "Space USD Coin",
       "symbol": "SP-USDC",
+      "unwrappedAddress": "0x66D6a157Ce6F40a39097769e7B310C834c8ED63d",
       "decimals": 18,
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png"
     }

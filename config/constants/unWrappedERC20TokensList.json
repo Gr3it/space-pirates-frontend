@@ -1,0 +1,21 @@
+{
+  "name": "SpacePirates unWrapped erc20 tokens list",
+  "timestamp": "2022-07-12T11:45:09Z",
+  "ids": ["USDT","USDC"],
+  "tokens": {
+    "USDT": {
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "address": "0x47822AF2870184A843e459DD84245Bb199F07189",
+      "decimals": 18,
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/825.png"
+    },
+    "USDC": {
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "address": "0x66D6a157Ce6F40a39097769e7B310C834c8ED63d",
+      "decimals": 18,
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png"
+    }
+  }
+}
