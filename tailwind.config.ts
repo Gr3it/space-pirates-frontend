@@ -13,6 +13,9 @@ const config: Config = {
       fontFamily: {
         poppins: ["var(--font-poppins)", ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        "error-25": "#fb6f8440",
+      },
     },
   },
   daisyui: {

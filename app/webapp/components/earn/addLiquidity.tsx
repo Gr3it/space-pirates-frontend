@@ -9,26 +9,27 @@ import { abi } from "@/config/abi/SpacePiratesTokens.sol/SpacePiratesTokens.json
 import { useAccount } from "wagmi";
 import { formatUnits } from "viem";
 
-type Token = {
+type TokenWithReserve = {
   id: number;
   name: string;
   symbol: string;
   decimals: number;
   logoURI: string;
   address?: string;
+  reserve: bigint;
 };
 
 type TokenInputProps = {
   amount: string;
   handleAmountChange?: (amount: string) => void;
-  token: Token;
+  token: TokenWithReserve;
 };
 
 const TokenInput = ({ amount, handleAmountChange, token }: TokenInputProps) => {
   const { address } = useAccount();
   const [balance, setBalance] = useState("0,0");
 
-  const { data, isError, isLoading } = useContractRead({
+  useContractRead({
     address: tokensContract as "0x${string}",
     abi: abi,
     functionName: "balanceOf",
@@ -46,7 +47,7 @@ const TokenInput = ({ amount, handleAmountChange, token }: TokenInputProps) => {
           {token.symbol}
         </div>
       </div>
-      <div className="flex input-group-md drop-shadow-md">
+      <div className="flex drop-shadow-md">
         <input
           type="number"
           inputMode="decimal"
@@ -60,7 +61,7 @@ const TokenInput = ({ amount, handleAmountChange, token }: TokenInputProps) => {
           spellCheck="false"
           className={`input input-md w-full rounded-l-md rounded-r-${
             !handleAmountChange ? "md" : "none"
-          }`}
+          } ${parseInt(amount) > parseInt(balance) ? " bg-error-25" : null}`}
           value={amount}
           onChange={
             handleAmountChange
@@ -72,15 +73,22 @@ const TokenInput = ({ amount, handleAmountChange, token }: TokenInputProps) => {
         />
         {handleAmountChange && (
           <span
-            className="btn btn-md btn-ghost bg-base-100 border-0 rounded-r-md rounded-l-none"
+            className={`btn btn-md btn-ghost bg-base-100 border-0 rounded-r-md rounded-l-none ${
+              parseInt(amount) > parseInt(balance) ? " bg-error-25" : null
+            }`}
             onClick={() => handleAmountChange(balance)}
           >
             MAX
           </span>
         )}
       </div>
+      <label className="label h-4 py-0 mt-2">
+        <span className="label-text-alt text-error">
+          {parseInt(amount) > parseInt(balance) ? "Amount exceed balance" : ""}
+        </span>
+      </label>
       {handleAmountChange && (
-        <label className="label">Balance: {balance}</label>
+        <label className="label pt-2">Balance: {balance}</label>
       )}
     </div>
   );
