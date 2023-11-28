@@ -1,7 +1,7 @@
-import { useState } from "react";
+"use client";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
-import ChevronDown from "../icons/chevronDown";
 import { useContractRead } from "wagmi";
 
 import { tokensContract } from "@/config/addresses.json";
@@ -23,21 +23,37 @@ type TokenInputProps = {
   amount: string;
   handleAmountChange?: (amount: string) => void;
   token: TokenWithReserve;
+  refetchTrigger: boolean;
+  setRefetchTrigger: (value: boolean) => void;
 };
 
-const TokenInput = ({ amount, handleAmountChange, token }: TokenInputProps) => {
+const TokenInput = ({
+  amount,
+  handleAmountChange,
+  token,
+  refetchTrigger,
+  setRefetchTrigger,
+}: TokenInputProps) => {
   const { address } = useAccount();
   const [balance, setBalance] = useState("0,0");
 
-  useContractRead({
+  const { refetch } = useContractRead({
     address: tokensContract as "0x${string}",
     abi: abi,
     functionName: "balanceOf",
+    enabled: !!address,
     args: [address, token.id],
     onSuccess(data: bigint) {
       setBalance(formatUnits(data, token.decimals));
     },
   });
+
+  useEffect(() => {
+    if (refetchTrigger) {
+      refetch();
+      setRefetchTrigger(false);
+    }
+  }, [refetchTrigger, setRefetchTrigger, refetch]);
 
   return (
     <div>
@@ -61,7 +77,9 @@ const TokenInput = ({ amount, handleAmountChange, token }: TokenInputProps) => {
           spellCheck="false"
           className={`input input-md w-full rounded-l-md rounded-r-${
             !handleAmountChange ? "md" : "none"
-          } ${parseInt(amount) > parseInt(balance) ? " bg-error-25" : null}`}
+          } ${
+            parseFloat(amount) > parseFloat(balance) ? " bg-error-25" : null
+          }`}
           value={amount}
           onChange={
             handleAmountChange
@@ -74,7 +92,7 @@ const TokenInput = ({ amount, handleAmountChange, token }: TokenInputProps) => {
         {handleAmountChange && (
           <span
             className={`btn btn-md btn-ghost bg-base-100 border-0 rounded-r-md rounded-l-none ${
-              parseInt(amount) > parseInt(balance) ? " bg-error-25" : null
+              parseFloat(amount) > parseFloat(balance) ? " bg-error-25" : null
             }`}
             onClick={() => handleAmountChange(balance)}
           >
@@ -84,7 +102,9 @@ const TokenInput = ({ amount, handleAmountChange, token }: TokenInputProps) => {
       </div>
       <label className="label h-4 py-0 mt-2">
         <span className="label-text-alt text-error">
-          {parseInt(amount) > parseInt(balance) ? "Amount exceed balance" : ""}
+          {parseFloat(amount) > parseFloat(balance)
+            ? "Amount exceed balance"
+            : ""}
         </span>
       </label>
       {handleAmountChange && (

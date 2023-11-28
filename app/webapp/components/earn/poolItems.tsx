@@ -50,15 +50,10 @@ type PoolsItemProps = {
     name: string;
     symbol: string;
     decimals: number;
+    poolId: number | null;
     logoURI: string;
   };
 };
-
-type MyObjectType = {
-  result: bigint[];
-};
-
-type MyArrayType = MyObjectType[];
 
 const wrappedTokensListTyped = wrappedTokensList as TokensList;
 const projectTokensListTyped = projectTokensList as TokensList;
@@ -98,7 +93,7 @@ export default function PoolsItem({ pair }: PoolsItemProps) {
     abi: abi as Abi,
   };
 
-  useContractReads({
+  const { refetch } = useContractReads({
     contracts: [
       {
         ...pairContract,
@@ -116,76 +111,6 @@ export default function PoolsItem({ pair }: PoolsItemProps) {
       setTokenB({ ...getToken(ids[1]), reserve: reserves[1] });
     },
   });
-
-  /*
-  const onAddLiquidity = async () => {
-    try {
-      await isApprovedSP("routerContract");
-
-      const spacePiratesRouter = await getContractInstance(
-        "routerContract",
-        "routerContract"
-      );
-
-      await spacePiratesRouter
-        .addLiquidity(
-          pool?.tokenA.id,
-          pool?.tokenB.id,
-          convertToHex(amountA, 1e18),
-          convertToHex(amountB, 1e18),
-          0,
-          0,
-          address,
-          getUnixTimestamp(300)
-        )
-        .send();
-
-      await fetchLPTokensBalances();
-      await fetchPool();
-    } catch (err) {
-      toggleAlert("Error while adding liquidity. Try again", "error");
-    }
-  };
-
-  const onRemoveLiquidity = async (amount: string) => {
-    try {
-      const pairContract = await tronWeb.contract(
-        PairContract.abi,
-        pool?.lpToken.address
-      );
-
-      await pairContract
-        .approve(
-          getAddress("routerContract", chain),
-          convertToHex(amount, 1e18)
-        )
-        .send();
-
-      const spacePiratesRouter = await getContractInstance(
-        "routerContract",
-        "routerContract"
-      );
-
-      await spacePiratesRouter
-        .removeLiquidity(
-          pool?.tokenA.id,
-          pool?.tokenB.id,
-          convertToHex(amount, 1e18),
-          0,
-          0,
-          address,
-          getUnixTimestamp(300)
-        )
-        .send();
-
-      await fetchLPTokensBalances();
-      await fetchPool();
-    } catch (err) {
-      toggleAlert("Error while adding liquidity. Try again", "error");
-    }
-  };
-
-  */
 
   return (
     <div className="xl:col-span-4 md:col-span-6 col-span-12 card card-compact drop-shadow-lg bg-base-200 collapse collapse-arrow">
@@ -208,10 +133,7 @@ export default function PoolsItem({ pair }: PoolsItemProps) {
                 width={25}
               />
             </div>
-            <p className="ml-14 font-bold text-xl">
-              {pair.name}
-              <span className="font-medium"> - APR: 7% (placeholder)</span>
-            </p>
+            <p className="ml-14 font-bold text-xl">{pair.name}</p>
           </div>
           <div className="flex">
             <p className="text-base">
@@ -251,10 +173,35 @@ export default function PoolsItem({ pair }: PoolsItemProps) {
             </button>
           </div>
           {(() => {
-            if (page === "add") return <Add tokenA={tokenA} tokenB={tokenB} />;
-            if (page === "remove") return <Remove />;
-            if (page === "stake") return <Stake />;
-            if (page === "unstake") return <Unstake />;
+            if (page === "add")
+              return <Add tokenA={tokenA} tokenB={tokenB} refetch={refetch} />;
+            if (page === "remove")
+              return (
+                <Remove
+                  pair={pairContract}
+                  tokenA={tokenA}
+                  tokenB={tokenB}
+                  refetch={refetch}
+                />
+              );
+            if (page === "stake")
+              return (
+                <Stake
+                  tokenA={tokenA}
+                  tokenB={tokenB}
+                  pair={pair}
+                  refetch={refetch}
+                />
+              );
+            if (page === "unstake")
+              return (
+                <Unstake
+                  tokenA={tokenA}
+                  tokenB={tokenB}
+                  pair={pair}
+                  refetch={refetch}
+                />
+              );
             return null;
           })()}
         </div>

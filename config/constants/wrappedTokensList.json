@@ -8,23 +8,42 @@
       "name": "Space Ethereum",
       "symbol": "SP-ETH",
       "decimals": 18,
-      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/2396.png"
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/2396.png",
+      "unWrapped": {
+        "name": "Sepolia ETH",
+        "symbol": "SepoliaETH",
+        "address": null,
+        "decimals": 18,
+        "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png"
+      }
     },
     "101": {
       "id": 101,
       "name": "Space USDT",
       "symbol": "SP-USDT",
-      "unwrappedAddress": "0x47822AF2870184A843e459DD84245Bb199F07189",
       "decimals": 18,
-      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/825.png"
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/825.png",
+      "unWrapped": {
+        "name": "Tether USD",
+        "symbol": "USDT",
+        "address": "0x47822AF2870184A843e459DD84245Bb199F07189",
+        "decimals": 18,
+        "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/825.png"
+      }
     },
     "102": {
       "id": 102,
       "name": "Space USD Coin",
       "symbol": "SP-USDC",
-      "unwrappedAddress": "0x66D6a157Ce6F40a39097769e7B310C834c8ED63d",
       "decimals": 18,
-      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png"
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png",
+      "unWrapped": {
+        "name": "USD Coin",
+        "symbol": "USDC",
+        "address": "0x66D6a157Ce6F40a39097769e7B310C834c8ED63d",
+        "decimals": 18,
+        "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png"
+      }
     }
   }
 }

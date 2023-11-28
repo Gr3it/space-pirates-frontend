@@ -9,6 +9,7 @@ type Token = {
   decimals: number;
   logoURI: string;
   address: string;
+  poolId: number | null;
 };
 
 type TokensList = {

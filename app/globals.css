@@ -2,3 +2,27 @@ html {
   height: 100%;
   scroll-behavior: smooth;
 }
+
+.icon-abs-left {
+  position: absolute;
+  left: 55px;
+  top: 55px;
+}
+
+.icon-abs-right {
+  position: absolute;
+  right: 55px;
+  top: 55px;
+}
+
+.icon-abs-mid-left {
+  position: absolute;
+  left: 55px;
+  top: 50%;
+}
+
+.icon-abs-bottom-right {
+  position: absolute;
+  right: 55px;
+  bottom: 55px;
+}

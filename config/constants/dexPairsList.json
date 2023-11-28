@@ -1,12 +1,30 @@
 {
   "name": "SpacePirates Dex tokens list",
   "timestamp": "2022-08-12T11:45:09Z",
-  "ids": ["DBL/ASTR"],
+  "ids": ["1-2", "1-100"],
+  "swapMapping": {
+    "1": [2, 100],
+    "2": [1],
+    "100": [1]
+  },
   "tokens": {
-    "DBL/ASTR":{
+    "1-2": {
       "name": "DBL/ASTR",
       "symbol": "DBL/ASTR",
       "address": "0x28d2f4111d58a734bD3F681040BeEc6D198Ef7B4",
+      "tokenA": 1,
+      "tokenB": 2,
+      "poolId": 0,
+      "decimals": 18,
+      "logoURI": "/favicon.ico"
+    },
+    "1-100": {
+      "name": "DBL/SP-ETH",
+      "symbol": "DBL/SP-ETH",
+      "address": "0x4Fe853A9E0C65bC50CA6389CA6828c9A409Fe796",
+      "tokenA": 1,
+      "tokenB": 100,
+      "poolId": 1,
       "decimals": 18,
       "logoURI": "/favicon.ico"
     }
